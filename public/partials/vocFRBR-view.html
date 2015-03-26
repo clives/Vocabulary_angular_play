@@ -1,0 +1,25 @@
+<div class="row">
+	<div class="col-sm-12 col-md-4 BigWord">{{vocabulary.foreignWord}}</div>
+	<div class="col-sm-12 col-md-4 BigWord">{{vocabulary.naturalWord}}</div>
+	<div class="col-sm-12 col-md-4 BigWord">{{vocabulary.examples}}</div>
+</div>
+
+<div class="row" ng-if="urlsoundDefined()">
+	<div class="col-xs-16 col-sm-2">
+		<a class="btn btn-primary  btn-lg btn-block" ng-click="playVocabulary(vocabulary)">Play</a></td>
+	</div>
+	<div class="col-xs-16 col-sm-2">
+		<a class="btn btn-primary  btn-lg btn-block" ng-click="stopVocabulary(vocabulary)">Stop</a></td>
+	</div>
+</div>
+
+<div class="row">
+<audioplayer  idaudiofile="audioId"></audioplayer>
+</div>
+
+<div class="row" style="margin-top: 15px;">
+<div class="col-xs-3 col-sm-3">
+    <a class="btn btn-primary  btn-lg btn-block" ui-sref="editVocabulary({id:vocabulary.id})">Edit</a>
+    </div>
+</div>
+

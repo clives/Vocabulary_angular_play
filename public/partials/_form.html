@@ -1,0 +1,45 @@
+<div class="form-group">
+    <label for="title" class="col-sm-3 control-label">Bresilien</label>
+    <div class="col-sm-6 col-md-4">
+        <input type="text" style="font-size: 100%; height: auto;" ng-model="vocabulary.foreignWord" required class="form-control" name="foreignWord" id="title" placeholder=""/>
+        <span class="form_error" ng-show="submitted && genericform.foreignWord.$error.required">Bresilien word is required.</span>
+    </div>
+</div>
+<div class="form-group">
+    <label for="year" class="col-sm-3 control-label">Francais</label>
+    <div class="col-sm-6 col-md-4">
+        <input type="text" style="font-size: 100%; height: auto;" ng-model="vocabulary.naturalWord" required class="form-control" name="naturalWord" placeholder=""/>
+        <span class="form_error" ng-show="submitted && genericform.naturalWord.$error.required">French word is required.</span>        
+    </div>
+</div>
+<div class="form-group">
+    <label for="director" class="col-sm-3  control-label">Exemples</label>
+    <div class="col-sm-10 col-md-4">
+        <textarea type="text" ng-model="vocabulary.examples" class="form-control" id="director" placeholder="examples of sentences"/>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <input type="submit" class="btn btn-primary" ng-click="submitted=true" value="Save" ng-disabled="NotUsedgenericform.$invalid"/>
+    </div>
+</div>
+
+
+<div class="form-group">
+	<div class="button col-sm-10 col-md-3" ng-file-select ng-file-change="upload($files, $event)" ng-multiple="multiple">Select File</div>
+</div>
+
+<!-- 
+<div class="row" ng-if="audiofiledefined">
+	<div class="col-xs-16 col-sm-2">
+		<a class="btn btn-primary  btn-lg btn-block" ng-click="playVocabulary(vocabulary)">Play</a></td>
+	</div>
+	<div class="col-xs-16 col-sm-2">
+		<a class="btn btn-primary  btn-lg btn-block" ng-click="stopVocabulary(vocabulary)">Stop</a></td>
+	</div>
+</div> -->
+
+
+<audioplayer  idaudiofile="audioId"></audioplayer>

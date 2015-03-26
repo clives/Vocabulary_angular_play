@@ -1,0 +1,17 @@
+<a ui-sref="newVocabulary" class="btn-primary btn-lg nodecoration">Add New Vocabulary</a>
+<table class="table movietable">
+	<tr>
+		<td><h3>All Vocabularies</h3></td>
+		<td></td>
+	</tr>
+
+	
+	<tr ng-repeat="vocabulary in vocabulaires">
+		<td>{{vocabulary.foreignWord}}</td>
+		<td><a class="btn btn-primary"
+			ui-sref="viewVocabulary({id:vocabulary.id})">View</a> <a
+			class="btn btn-danger" ng-click="deleteVocabulary(vocabulary)">Delete</a></td>
+	</tr>
+</table>
+
+

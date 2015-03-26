@@ -1,0 +1,11 @@
+BODY {
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+    font-size: 82.5%; padding: 2em;
+}
+.timeleft { border: 1px solid #EEE; border-radius: 0.5em; font-size: 4em; display: inline-block; margin: 0.5em 0; padding: 0.5em; }
+H1 { font-weight: bold; font-size: 2em; }
+
+// Pour changer couleur tableau..
+//.table tbody tr.success>td {
+//background-color: #dfd800;
+//}

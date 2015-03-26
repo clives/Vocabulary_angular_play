@@ -1,0 +1,113 @@
+@(message: String)(implicit request: RequestHeader)
+
+@main("Experiment Angular") {
+	
+	<script type="text/javascript" charset="utf-8">
+    $(function() { 
+    	window.serviceVocabulariesUrl="@routes.Application.saveVocabulary().absoluteURL(false)";
+    	window.serviceAudiofileUrl="@routes.ApplicationAudioFile.getAudioFile("xxxCCxxx").absoluteURL(false)";
+    	
+    	window.urlaudioFile=function( id){
+    		return window.serviceAudiofileUrl.replace("xxxCCxxx", id);
+    	}
+    })
+	</script>
+	
+	<style>
+	
+	.button {
+	    -moz-appearance: button;
+	    /* Firefox */
+	    -webkit-appearance: button;
+	    /* Safari and Chrome */
+	    padding: 10px;
+	    margin: 10px; 
+	    font-size: 80%;   
+	}
+	.drop-box {
+	    background: #F8F8F8;
+	    border: 5px dashed #DDD;
+	    width: 200px;
+	    height: 65px;
+	    text-align: center;
+	    padding-top: 25px;
+	    margin: 10px;
+	}
+	.dragover {
+	    border: 5px dashed blue;
+	}
+	
+	.form_error{
+		font-size: 60%;
+	}
+	
+	.ng-invalid.ng-dirty{
+  		border-color: #FA787E;
+	}
+	.ng-valid.ng-dirty{
+  		border-color: #78FA89;
+	}
+
+	@@media screen and (min-width: 500px) {
+    body{font-size: 350%;}
+	}
+	@@media screen and (min-width: 500px) {
+    body{font-size: 350%;}
+	}	
+
+	@@media screen and (min-width: 700px) {
+	    body{font-size: 420%;}
+	}
+
+	@@media screen and (min-width: 900px) {
+	    body{font-size: 420%;}
+	}
+	
+	@@media screen and (min-width: 1200px) {
+	    body{font-size: 220%;}
+	}
+		
+	@@media (min-width: @@screen-md) {	
+		.BigWord{font-size: 9em;}
+	}
+	@@media (min-width: @@screen-sm) {
+    	.BigWord{font-size: 9em;}
+	}
+	
+	</style>
+
+	<div data-ng-app="vocabularyApp">
+	
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" ui-sref="vocabularies">Vocabulary App</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a ui-sref="vocabularies">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row top-buffer">
+            <div class="col-xs-12 col-md-8 col-md-offset-2">
+                <div ui-view></div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="@routes.Assets.at("/public","libjs/angular.min.js")"></script>
+    <script src="@routes.Assets.at("/public","libjs/angular-file-upload-all.min.js")"></script>   
+    <script src="@routes.Assets.at("/public","javascripts/app.js")"></script>
+    <script src="@routes.Assets.at("/public","javascripts/controllers.js")"></script>
+    <script src="@routes.Assets.at("/public","javascripts/services.js")"></script>
+    <script src="@routes.Assets.at("/public","javascripts/directives.js")"></script>
+    <script src="@routes.Assets.at("/public","javascripts/filters.js")"></script>
+    <script src="@routes.Assets.at("/public","libjs/angular-ui-router.min.js")"></script>
+    <script src="@routes.Assets.at("/public","libjs/angular-resource.min.js")"></script>
+    <script src="@routes.Assets.at("/public","libjs/howler.min.js")"></script>    
+}
+
+

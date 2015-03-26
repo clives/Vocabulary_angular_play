@@ -1,0 +1,35 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+GET     /                           controllers.Application.index()
+
+GET     /vocabulary                      controllers.Application.vocabulary()
+
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+GET     /partials/*file				controllers.Assets.at(path="/public/partials", file)
+
+GET     /webjars/*file              controllers.WebJarAssets.at(file)
+
+
+
+
+GET     /api/vocabularies                 controllers.Application.listVocabularies()
+
+GET     /api/vocabularies/:id              controllers.Application.getVocabulary(id: String)
+
+POST    /api/vocabularies                 controllers.Application.saveVocabulary()
+
+PUT     /api/vocabularies/:id              controllers.Application.updateVocabulary(id: String)
+
+DELETE  /api/vocabularies/:id           controllers.Application.deleteVocabulary(id: String)
+
+
+POST    /upload                     controllers.ApplicationAudioFile.upload
+
+# we need to add .mp3 for howl
+GET     /getAudioFile/:id/.mp3           controllers.ApplicationAudioFile.getAudioFile(id: String)
